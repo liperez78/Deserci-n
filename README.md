@@ -11,6 +11,7 @@ Entrenar y evaluar un modelo de clasificación usando un Árbol de Decisión en 
 
 Es una aplicación de predicción de deserción escolar utilizando Streamlit para la interfaz de usuario, pandas para la manipulación de datos y scikit-learn para construir y evaluar un modelo de clasificación con un Árbol de Decisión, Es decir:
 Construye un modelo de Árbol de Decisión para predecir la deserción escolar basado en características como "ESTRATO", "GRADO", "EDAD", "PUNTAJE" y "ingresos_promedio". Después de entrenar el modelo y calcular su precisión, el código también identifica e imprime los estudiantes que han desertado según los datos proporcionados.
+se debe ejecutar con streamlit run app.py, el aplicativo devuelve la url para ejecutarlo en el local y la url para generarlo por la web
 
 ##Interfaz de usuario con Streamlit:
 
