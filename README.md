@@ -1,14 +1,14 @@
 el proyecto presentado tendrá como objeto principal desplegar un modelode inteligencia artificial que permite clasificar los posibles casos de deserciónescolar, 
 esto a través de la evaluación de diversos factores socioeconómicos ydemográficos. tomado de la base de datos suministrada ##Datos_deserción.xlsx
-1. ##Proyecto prevención de la deserción estudiantil en etapa escolar
+1. Proyecto prevención de la deserción estudiantil en etapa escolar
 
 Genera el contexto de los factores principales que promueven la deserción escolar se encuentran las condiciones geográficas y sociales de los entornos de desarrollo, el
 acceso a la educación, las condiciones socioeconómicas del contexto familiar y local, entre otros.
 
-2. ##Entrenamiento del Modelo
+2. Entrenamiento del Modelo
 Entrena un modelo de clasificación usando un árbol de decisión para predecir la deserción escolar. Realiza el preprocesamiento de los datos, que incluye la imputación de valores faltantes y la normalización, y luego evalúa el modelo entrenado en un conjunto de datos de prueba
 
-4. ##Metricas generdas
+4. Metricas generdas
 Permite generar una carga un modelo de clasificación, realiza predicciones sobre un conjunto de datos, evalúa la precisión del modelo y genera una matriz de confusión para visualizar el rendimiento. Además, prepara un nuevo conjunto de datos para posibles futuras predicciones.
    
 5. Ejecución del programa app.py
@@ -17,15 +17,16 @@ Es una aplicación de predicción de deserción escolar utilizando Streamlit par
 Construye un modelo de Árbol de Decisión para predecir la deserción escolar basado en características como "ESTRATO", "GRADO", "EDAD", "PUNTAJE" y "ingresos_promedio". Después de entrenar el modelo y calcular su precisión, el código también identifica e imprime los estudiantes que han desertado según los datos proporcionados.
 se debe ejecutar con streamlit run app.py, el aplicativo devuelve la url para ejecutarlo en el local y la url para generarlo por la web
 
-##Interfaz de usuario con Streamlit:
+6.Interfaz de usuario con Streamlit:
 
 Título: Muestra el título "Predicción de Deserción Escolar".
 Precisión: Muestra la precisión del modelo entrenado.
 Visualización de datos: Muestra un subconjunto del DataFrame que contiene solo a los estudiantes que desertaron.
 Entrada de nuevos datos: Proporciona entradas de número para que el usuario ingrese valores para las características de un nuevo estudiante.
 Predicción: Cuando se hace clic en el botón "Predecir", se crea un nuevo DataFrame con los valores ingresados y el modelo predice si ese estudiante deserta o no.
-4. ## Salida:
+7. Salida:
 Muestra la predicción sobre la deserción basada en los valores ingresados por el usuario en la interfaz.
 Crea una url para que el usuario navegue sobre los datos y genere la predicción
-5. ## Pruebas unitarias
+8. Pruebas unitarias -  test_Entrenamiento_modelo.py
+ Realiza una prueba unitaria para la función Extraer_Dividir_Datos. Se utiliza un mock para simular la entrada de datos y se verifican tanto el tipo como las dimensiones de los datos que la función retorna. Esto asegura que la función se comporte correctamente al procesar los datos.
 Se debe ejecutar el archivo test_Entrenamiento_modelo.py
