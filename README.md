@@ -5,9 +5,9 @@ esto a través de la evaluación de diversos factores socioeconómicos ydemográ
 Genera el contexto de los factores principales que promueven la deserción escolar se encuentran las condiciones geográficas y sociales de los entornos de desarrollo, el
 acceso a la educación, las condiciones socioeconómicas del contexto familiar y local, entre otros.
 
-2. ##Modelo entrenado desercciòn_escolar.ipynb
-Entrenar y evaluar un modelo de clasificación usando un Árbol de Decisión en Python para predecir la deserción escola
-3. Ejecución del programa app.py
+2. ##
+   
+4. Ejecución del programa app.py
 
 Es una aplicación de predicción de deserción escolar utilizando Streamlit para la interfaz de usuario, pandas para la manipulación de datos y scikit-learn para construir y evaluar un modelo de clasificación con un Árbol de Decisión, Es decir:
 Construye un modelo de Árbol de Decisión para predecir la deserción escolar basado en características como "ESTRATO", "GRADO", "EDAD", "PUNTAJE" y "ingresos_promedio". Después de entrenar el modelo y calcular su precisión, el código también identifica e imprime los estudiantes que han desertado según los datos proporcionados.
