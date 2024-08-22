@@ -6,7 +6,9 @@ Genera el contexto de los factores principales que promueven la deserción escol
 acceso a la educación, las condiciones socioeconómicas del contexto familiar y local, entre otros.
 
 2. ##Entrenamiento del Modelo
-3. ##Metricas generdas
+Entrena un modelo de clasificación usando un árbol de decisión para predecir la deserción escolar. Realiza el preprocesamiento de los datos, que incluye la imputación de valores faltantes y la normalización, y luego evalúa el modelo entrenado en un conjunto de datos de prueba
+
+4. ##Metricas generdas
 Permite generar una carga un modelo de clasificación, realiza predicciones sobre un conjunto de datos, evalúa la precisión del modelo y genera una matriz de confusión para visualizar el rendimiento. Además, prepara un nuevo conjunto de datos para posibles futuras predicciones.
    
 5. Ejecución del programa app.py
