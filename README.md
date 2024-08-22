@@ -24,4 +24,5 @@ Predicción: Cuando se hace clic en el botón "Predecir", se crea un nuevo DataF
 4. ## Salida:
 Muestra la predicción sobre la deserción basada en los valores ingresados por el usuario en la interfaz.
 Crea una url para que el usuario navegue sobre los datos y genere la predicción
-5. ## Pruebas unitarias 
+5. ## Pruebas unitarias
+Se debe ejecutar el archivo test_Entrenamiento_modelo.py
