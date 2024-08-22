@@ -3,64 +3,67 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 import streamlit as st
+import Entrenamiento_modelo
+import numpy as np
 
-# Crear un DataFrame con los datos
-data = {
-    "ESTRATO": [1000000, 9028, -14413, 233543, 131355, 2831],
-    "GRADO": [0.009028, 1.0, 961004, 129205, None, 18173],
-    "EDAD": [-14413, 61004, 1.0, 86182, 13697, -51215],
-    "PUNTAJE": [233543, 129205, 86182, 1.0, None, 44992],
-    "ingresos_promedio": [131355, 11742, -13697, 261148, 1.0, -29565],
-    "DESERTOR": [2831, 18173, -20319, 14173, 51215, -44992]
-}
 
-df = pd.DataFrame(data)
+def GUI():
+    #recibir los datos entrenamos del modelo 
+    datos_recibidos=Entrenamiento_modelo.modelopipeline()
+    model=datos_recibidos[0]
+    X_test=datos_recibidos[1]
+    y_test=datos_recibidos[2]
 
-# Eliminar filas con valores nulos
-df = df.dropna()
+    # Predecir en el conjunto de prueba
+    y_pred = model.predict(X_test)
 
-# Dividir los datos en características (X) y variable objetivo (y)
-X = df.drop("DESERTOR", axis=1)
-y = df["DESERTOR"]
+    # Calcular la precisión del modelo
+    accuracy = accuracy_score(y_test, y_pred)
 
-# Dividir los datos en conjuntos de entrenamiento y prueba
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-# Crear el modelo de Árbol de Decisión
-model = DecisionTreeClassifier()
 
-# Entrenar el modelo
-model.fit(X_train, y_train)
+    # Streamlit UI
+    #titulo
+    st.title("Predicción de Deserción Escolar")
+    st.subheader('Entrada de datos:')
 
-# Predecir en el conjunto de prueba
-y_pred = model.predict(X_test)
 
-# Calcular la precisión del modelo
-accuracy = accuracy_score(y_test, y_pred)
+    st.write("Predicción en nuevos datos")
+    estrato = st.selectbox(
+        "Estrato:",
+        (0,1,2,3,4,5,6,"No indica"),
+        )
+    #st.selectbox('pr',options=np.arange(1.0,7.1,0.1))
+    grado =st.selectbox("Grado:",options=np.arange(1,12))
+    edad = st.number_input("Edad:", value=0, min_value=0, step=1)
+    puntaje = st.number_input("Nota promedio año:", value=1.0, step=0.1, min_value=1.0, max_value=10.0)
+    ingresos = st.number_input("Promedio de ingresos économicos (anual):", value=0, min_value=0)
 
-# Streamlit UI
-st.title("Predicción de Deserción Escolar")
+    #convertir valores para la evaluación
+    if estrato=="No indica":
+        estrato=7
 
-st.write(f"Precisión del modelo: {accuracy:.2f}")
+    #Evaluación del modelo
+    if st.button("Predecir"):
+        nuevo_estudiante = pd.DataFrame({
+            "ESTRATO": [estrato],
+            "GRADO": [grado],
+            "EDAD": [edad],
+            "PUNTAJE": [puntaje],
+            "ingresos_promedio": [ingresos]
+        })
+        prediccion = model.predict(nuevo_estudiante)
+        st.write("Predicción de deserción:", "El estudiante deserto" if prediccion[0]==1 else "El estudiante se mantiene en el sistema educativo")
 
-st.write("Estudiantes que desertaron:")
-desertores = df[df["DESERTOR"] > 0]
-st.dataframe(desertores)
+        st.write(f"Precisión del modelo: {accuracy:.2f}")
 
-st.write("Predicción en nuevos datos")
-estrato = st.number_input("Estrato", value=0)
-grado = st.number_input("Grado", value=0.0)
-edad = st.number_input("Edad", value=0)
-puntaje = st.number_input("Puntaje", value=0.0)
-ingresos = st.number_input("Ingresos promedio", value=0)
+  
 
-if st.button("Predecir"):
-    nuevo_estudiante = pd.DataFrame({
-        "ESTRATO": [estrato],
-        "GRADO": [grado],
-        "EDAD": [edad],
-        "PUNTAJE": [puntaje],
-        "ingresos_promedio": [ingresos]
-    })
-    prediccion = model.predict(nuevo_estudiante)
-    st.write("Predicción de deserción:", prediccion[0])
+
+
+def main():
+    my_app = GUI()
+    return 0
+
+if __name__ == "__main__":
+    main()
