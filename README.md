@@ -7,8 +7,9 @@ acceso a la educación, las condiciones socioeconómicas del contexto familiar y
 
 2. ##Entrenamiento del Modelo
 3. ##Metricas generdas
+Permite generar una carga un modelo de clasificación, realiza predicciones sobre un conjunto de datos, evalúa la precisión del modelo y genera una matriz de confusión para visualizar el rendimiento. Además, prepara un nuevo conjunto de datos para posibles futuras predicciones.
    
-4. Ejecución del programa app.py
+5. Ejecución del programa app.py
 
 Es una aplicación de predicción de deserción escolar utilizando Streamlit para la interfaz de usuario, pandas para la manipulación de datos y scikit-learn para construir y evaluar un modelo de clasificación con un Árbol de Decisión, Es decir:
 Construye un modelo de Árbol de Decisión para predecir la deserción escolar basado en características como "ESTRATO", "GRADO", "EDAD", "PUNTAJE" y "ingresos_promedio". Después de entrenar el modelo y calcular su precisión, el código también identifica e imprime los estudiantes que han desertado según los datos proporcionados.
