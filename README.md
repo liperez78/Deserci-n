@@ -1,11 +1,12 @@
 el proyecto presentado tendrá como objeto principal desplegar un modelode inteligencia artificial que permite clasificar los posibles casos de deserciónescolar, 
-esto a través de la evaluación de diversos factores socioeconómicos ydemográficos.
+esto a través de la evaluación de diversos factores socioeconómicos ydemográficos. tomado de la base de datos suministrada ##Datos_deserción.xlsx
 1. ##Proyecto prevención de la deserción estudiantil en etapa escolar
 
 Genera el contexto de los factores principales que promueven la deserción escolar se encuentran las condiciones geográficas y sociales de los entornos de desarrollo, el
 acceso a la educación, las condiciones socioeconómicas del contexto familiar y local, entre otros.
 
-2. ##
+2. ##Entrenamiento del Modelo
+3. ##Metricas generdas
    
 4. Ejecución del programa app.py
 
